@@ -1,17 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Lists</h1>
-
-<div class="row">
-  <% @lists.each do |list| %>
-    <div class="col-md-4">
-      <h5>
-        <%= list.name.capitalize %>
-      </h5>
-    </div>
-  <% end %>
-</div>
-
+<br>
+<%= link_to 'New List', new_list_path %>
 <br>
 
-<%= link_to 'New List', new_list_path %>
+<%= tag.div :id => :boards, :data => { :lists => @lists.to_json(:include => :cards) } %>
