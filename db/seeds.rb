@@ -1,0 +1,1 @@
+User.create(:email => "alex@mail.com", :first_name => "Alex", :last_name => "Miasoiedov", :password => "password0", :password_confirmation => "password0") unless User.find_by(:email => "alex@mail.com").present?
